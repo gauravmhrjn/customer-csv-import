@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/nesbot/carbon/extension.neon
+    
+parameters:
+    level: 5
+    paths:
+        - app
+        - routes
+        - tests
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        - 
+            message: '#^Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage\:\:once\(\)\.$#'
+            identifier: method.notFound
+            path: tests/*
